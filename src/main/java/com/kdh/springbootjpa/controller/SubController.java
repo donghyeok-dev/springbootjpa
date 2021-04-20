@@ -5,16 +5,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class MainController extends TestAbstractController {
+public class SubController extends TestAbstractController {
 
-    public MainController(TestService testService) {
+    public SubController(TestService testService) {
         super(testService);
     }
 
-    @GetMapping("/testMethod2")
+    @GetMapping("/testMethod3")
     @Override
     public String testAbstractMethod2() {
         this.testService.testMethod2();
-        return "MainController testMethod! " + getUserName();
+        return "SubController testMethod! "+ getUserName();
     }
 }
